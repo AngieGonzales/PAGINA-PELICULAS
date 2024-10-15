@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +8,37 @@ body {
 }
 .header {
     background-color: black;
-    height: 100px;
+    display: flex;
+    margin-top: 1%;
+    margin-left: 3%;
+    position: relative;
+    
+}
+.icono {
+    width: 40px;
+    margin-top: 10px;
 }
 .titulo {
-    width: 30%;
+    position: relative;
+    display: inline-block;
 }
 .titulo h1{
     color: azure;
     margin: 10px 0 10px 10px;
+    font-size: 40px;
+    font-family: 'Protest Strike';
+    position: relative;
+    z-index: 1;
 }
-.encabezado {
-    width: 50%;
+.container-titulo2 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+.titulo2 {
+    margin-top: 3%;
+    color: rgb(233, 227, 227);
+    font-family: 'Times New Roman', Times, serif;
 }
 nav {
     padding: 10px;
@@ -30,6 +51,7 @@ nav ul {
     gap: 20px; /* Espacio entre los elementos de la lista */
     margin: 0 auto;
     padding: 0;
+    margin-left: 0;
 }
 nav ul li {
     display: inline;
@@ -113,30 +135,28 @@ nav ul li a:hover {
     justify-content: center; /* Centra horizontalmente el contenido */
     align-items: center; /* Centra verticalmente el contenido si es necesario */
     margin-top: 20px; /* Espaciado superior opcional */
+    position: absolute;
+    right: 15px;
 }
 
 /* Estilo para el botón (enlace) */
 .styled-link {
     background-color: #d20303; /* Color de fondo verde */
     color: white; /* Color del texto */
-    padding: 12px 24px; /* Espaciado interno del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
     font-size: 16px; /* Tamaño de la fuente */
     text-align: center; /* Centra el texto dentro del botón */
     text-decoration: none; /* Elimina el subrayado del enlace */
     border-radius: 8px; /* Bordes redondeados */
     transition: background-color 0.3s ease; /* Transición suave en el hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del botón */
     font-weight: bold; /* Negrita para el texto */
+    border: none;
+    margin-bottom: 10px;
 }
 
 /* Hover y focus para el botón */
 .styled-link:hover {
     background-color: #e22020; /* Cambia el color de fondo en hover */
-}
-
-.styled-link:focus {
-    outline: none; /* Elimina el borde de enfoque por defecto */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Sombra extra al hacer clic */
 }
 
 /* Efecto al presionar el botón */
@@ -145,13 +165,19 @@ nav ul li a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
     transform: translateY(2px); /* Mueve el botón hacia abajo al presionar */
 }
-
+.volver {
+    margin-right: 20px;
+    color: #d20303;
+    font-weight: bold;
+    font-size: 15px;
+}
 /* Contenido general */
 .menu-pl {
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
     padding: 5px;
+    margin-top: 3%;
 }
 
 /* Cada contenedor de categoría */
@@ -166,10 +192,14 @@ nav ul li a:hover {
     border-radius: 8px; /* Bordes redondeados */
     text-align: center; /* Centra el texto dentro del contenedor */
     background-color: #000000; /* Fondo blanco */
-    transition: box-shadow 0.3s ease; /* Transición para la sombra */
+    transition: transform 0.3s ease;
 }
 .general-txt:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.1);
+}
+.general-txt h4 {
+    color: #c0bcbc;
 }
 .img-1 {
     width: 100%; 
@@ -198,4 +228,14 @@ p {
 }
 .nav li:hover ul {
     display: block; 
+}
+.footer {
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alinear texto al centro */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Posicionamiento relativo */
+    bottom: 0; /* Asegurarse de que esté al final de la página */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    margin-top: 7%;
 }

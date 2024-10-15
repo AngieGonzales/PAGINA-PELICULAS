@@ -80,7 +80,7 @@ def edit(id):
                 pelicula.imagen = filename
 
         db.session.commit()
-        return redirect(url_for('pelicula.index', id=pelicula.categoria_id))
+        return redirect(url_for('pelicula.index', categoria_id=pelicula.categoria_id))
 
     categorias = Categorias.query.all()
     return render_template('pelicula/edit.html', pelicula=pelicula, categorias=categorias)

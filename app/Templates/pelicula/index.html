@@ -8,28 +8,25 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="header">
+        <div>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="" class="icono">
+        </div>
         <div class="titulo">
             <h1>CINEMAGIC</h1>
         </div>
-        <nav class="encabezado">
-            <ul>
-                {% for categoria in categorias %}
-                    <li><a href="{{ url_for('pelicula.index', categoria_id=categoria.idCategoria) }}">{{ categoria.nombre }}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
+        <div class="button-container">
+            <a href="{{ url_for('categoria.index') }}" class="volver">Volver a Categorias</a>
+            <button type="button" class="styled-link btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMovieModal">AGREGAR</button>
+        </div>
     </header>
     <div class="contenedor">
-        <div class="titulo">
-            <h1>Peliculas en la categoria: {{ categoria.nombre}}</h1>
-        </div>
         <section class="menu-pl container"> 
                 {% for pelicula in data %}
                 <div class="general-txt">
                     <img class="img-1" src="{{ url_for('static', filename='uploads/' ~ pelicula.imagen) }}" alt="{{ pelicula.nombre }}" width="100">
                     <h3>{{ pelicula.nombre }}</h3>
-                    <h4>{{ pelicula.fecha}}</h4>
+                    <h4> Año: {{ pelicula.fecha}}</h4>
                     <div>
                         <ul class="nav">
                             <li><a href="">ACCIONES</a>
@@ -136,13 +133,12 @@
         </div>
     </div>
 </div>
-
-<!-- Botón para abrir el modal -->
- <div class="button-container">
-    <button type="button" class="styled-link btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMovieModal">AGREGAR PELICULA</button>
-</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <footer class="footer">
+        <div class="content-footer">
+            <p>&copy; Desarrollado por: Angie Katherine Gonzales Acuña. "CINEMAGIC"</p>
+        </div>
+    </footer>
 </body>
 </html>
